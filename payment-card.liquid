@@ -1,0 +1,4 @@
+{% assign enabled_payment_types = 'visa,master,american_express,paypal' | remove: ' ' | split: ',' %}
+                      {% for type in enabled_payment_types %}
+                        {{ type | payment_type_svg_tag: class: 'payment-list__item' }}
+                        {% endfor %}
